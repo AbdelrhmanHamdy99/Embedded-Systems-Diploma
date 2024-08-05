@@ -1,28 +1,28 @@
 
-#ifndef PLAT_FORMS_H_
-#define PLAT_FORMS_H_
+#ifndef PLATFORM_TYPES_H_
+#define PLATFORM_TYPES_H_
 
-typedef unsigned char      uint8;
-typedef char               sint8;
-typedef volatile uint8     vuint8;
-typedef volatile sint8     vsint8;
+typedef unsigned char      uint8_t;
+typedef signed char        sint8_t;
+typedef volatile uint8     vuint8_t;
+typedef volatile sint8     vsint8_t;
 
-typedef unsigned short int uint16;
-typedef short int          sint16;
-typedef volatile uint16    vuint16;
-typedef volatile sint16    vSint16;
+typedef unsigned short     uint16_t;
+typedef signed short       sint16_t;
+typedef volatile uint16    vuint16_t;
+typedef volatile sint16    vSint16_t;
 
-typedef unsigned long int  uint32;
-typedef long int           sint32;
-typedef volatile uint32    vuint32;
-typedef volatile sint32    vsint32;
+typedef unsigned long int  uint32_t;
+typedef signed long int    sint32_t;
+typedef volatile uint32    vuint32_t;
+typedef volatile sint32    vsint32_t;
 
-typedef unsigned long long uint64;
-typedef long long          sint64;
-typedef volatile uint64    vuint64;
-typedef volatile sint64    vsint64;
+typedef unsigned long long uint64_t;
+typedef signed long long   sint64_t;
+typedef volatile uint64    vuint64_t;
+typedef volatile sint64    vsint64_t;
 
-typedef float              float32;
-typedef double             float64;
-typedef long double        float128;
+typedef float              f32_t;
+typedef double             f64_t;
+
 #endif
