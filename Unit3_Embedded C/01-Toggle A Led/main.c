@@ -16,7 +16,6 @@
  *
  ******************************************************************************
  */
-//#include <stdint.h>
 #include "platform_types.h"
 
 #define RCC_BASE        0x40021000
@@ -39,11 +38,11 @@ int main(void)
 	RCC_APB2ENR_R  |=  (1<<2);           /*set bit2*/
 	GPIO_PORTA_CRH &= ~(0xf << 20);      /*reset bits 20-->24*/
 	GPIO_PORTA_CRH |=  (2 << 20);        /*write 2 on bits 20-->24*/
+	uint32_t i;
 	for(;;){
-		GPIO_PORTA_ODR_R->pins.pin13 = 1;/*led off*/
-		int i;
+		GPIO_PORTA_ODR_R->pins.pin13 = 1;/*led on*/
 		for(i = 0 ; i < 100000; i++);    /*software delay*/
-		GPIO_PORTA_ODR_R->pins.pin13 = 0;/*led on*/
+		GPIO_PORTA_ODR_R->pins.pin13 = 0;/*led off*/
 		for(i = 0 ; i < 100000; i++);    /*software delay*/
 	}
 }
