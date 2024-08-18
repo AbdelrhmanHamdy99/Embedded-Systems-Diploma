@@ -21,7 +21,6 @@ void MemManage_Handler(void)__attribute__((weak, alias("Default_Handler")));
 void BusFault_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void UsageFault_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void SVCall_Handler(void)   __attribute__((weak, alias("Default_Handler")));
-void Debug_Monitor(void)    __attribute__((weak, alias("Default_Handler")));
 void PendSV_Handler(void)   __attribute__((weak, alias("Default_Handler")));
 void SysTick_Handler(void)  __attribute__((weak, alias("Default_Handler")));
 /*weak --> tells the compiler that this definition is weak and can be 
@@ -47,7 +46,7 @@ uint32_t vector_table[] __attribute__((section(".vector_table"))) = {
 	(uint32_t) 0, /*reserved*/
 	(uint32_t) 0, /*reserved*/
 	(uint32_t) &SVCall_Handler,
-	(uint32_t) &Debug_Monitor,
+	(uint32_t) 0, /*reserved for debug*/
 	(uint32_t) 0, /*reserved*/
 	(uint32_t) &PendSV_Handler,
 	(uint32_t) &SysTick_Handler 
