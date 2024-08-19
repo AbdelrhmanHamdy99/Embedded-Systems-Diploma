@@ -1,10 +1,10 @@
-#Generic make file
-#By: Abdelrhman Hamdy
+#generic make file
+#copyrights: Abdelrhman Hamdy
 
 #=================environment variables=================#
 #C Compiler
 CC=arm-none-eabi-
-CFLAGS=-g -mcpu=arm926ej-s 
+CFLAGS= -mcpu=cortex-m4 -gdwarf-2 -g
 #includes directories locations
 INCS= -I. 
 #static libraries to be linked
@@ -18,7 +18,7 @@ As = $(wildcard *.s)
 #all object files generated from assembly files
 AsOBJ=$(As:.s=.o) 
 #output file name
-project_name=learn-in-depth
+project_name=toggle_a_led_cortex-M3
 #=================rules=================#
 	#============format=============#
 #target: dependencies
@@ -26,14 +26,15 @@ project_name=learn-in-depth
 
 #first rule executed when make is invoked
 all: $(project_name).bin 
-	@echo "done"
 #generate binary file to be burned on the target
 $(project_name).bin: $(project_name).elf 
 	$(CC)objcopy.exe -O binary $< $@
 	
 #generate elf file that contains debugging info
 $(project_name).elf: $(OBJ) $(AsOBJ) 
-	$(CC)ld.exe -T linker_script.ld $(AsOBJ) $(OBJ) $(LIBS) -o $@
+	$(CC)ld.exe -T linker_script.ld $(AsOBJ) $(OBJ) $(LIBS) -o $@ -Map=map_file.map
+	#for keil uVision
+	cp $(project_name).elf $(project_name).axf 
 	
 #generate object file from any source file
 %.o: %.c 
@@ -49,7 +50,8 @@ clean_all:
 
 #remove just output files
 clean:
-	rm *.bin *.hex *.elf
+	rm *.o
+
 	
 #=================symbols=================#
 	#$< : dependency
