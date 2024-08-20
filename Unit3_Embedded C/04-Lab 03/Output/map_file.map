@@ -97,11 +97,11 @@ OUTPUT(toggle_a_led_cortex-M3.elf elf32-littlearm)
  .debug_line    0x0000000000000000       0x77 main.o
  .debug_line    0x0000000000000077       0x7f startup.o
 
-.debug_str      0x0000000000000000      0x2c5
+.debug_str      0x0000000000000000      0x2c8
  .debug_str     0x0000000000000000      0x23d main.o
                                         0x26d (size before relaxing)
- .debug_str     0x000000000000023d       0x88 startup.o
-                                        0x1f0 (size before relaxing)
+ .debug_str     0x000000000000023d       0x8b startup.o
+                                        0x1f3 (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
  .comment       0x0000000000000000       0x7b main.o

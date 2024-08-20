@@ -29,7 +29,7 @@ void SysTick_Handler(void)    __attribute__((weak, alias("Default_Handler")));
 /*alias--> tells the compiler that this definition is just like a prototype
 		   to another definition "Default Handler" to avoid rewriting the 
 		   same code and seizing another space for the same code*/
-static uint32_t stack_top [256]; /*stack_size = 4kB*/
+static uint32_t stack_bottom [256]; /*stack_size = 1kB*/
 			/*static global uninitialized so it's allocated in ram at run time in .bss
 			static here is to change the scope of the array to be just in the file scope
 			so any other source file cannot modify it neither even access it*/
@@ -38,7 +38,7 @@ static uint32_t stack_top [256]; /*stack_size = 4kB*/
 void (*const vector_table[])() __attribute__((section(".vector_table"))) = {
 	/*the given attribute tills the compiler to store this gloal
 	array at a section named ".vector_table"*/
-	(void(* const)()) (stack_top + sizeof(stack_top) / sizeof(uint32_t)),
+	(void(* const)()) (stack_bottom + sizeof(stack_bottom) / sizeof(uint32_t)),
 	&Reset_Handler,
 	&NMI_Handler,
 	&HardFault_Handler,
