@@ -31,7 +31,6 @@ Linker script and memory map
                 0x000000000800013c                SVCall_Handler
                 0x000000000800013c                Default_Handler
                 0x000000000800013c                MemManage_Handler
-                0x000000000800013c                Debug_Monitor
                 0x000000000800013c                BusFault_Handler
  *(.rodata)
  .rodata        0x0000000008000148        0x5 main.o
