@@ -52,7 +52,7 @@ status_t LIFO_pop (LIFO_t* lifo_ptr,element_type *out){
 		*out = lifo_ptr->base[--(lifo_ptr->counter)];
 		break;
 	}
-	return LIFO_NO_ERROR; /*element pushed successfully*/
+	return LIFO_NO_ERROR; /*element popped successfully*/
 }
 
 status_t LIFO_top (LIFO_t* lifo_ptr,element_type *out){
@@ -66,7 +66,7 @@ status_t LIFO_top (LIFO_t* lifo_ptr,element_type *out){
 		*out = lifo_ptr->base[lifo_ptr->counter - 1];
 		break;
 	}
-	return LIFO_NO_ERROR; /*element pushed successfully*/
+	return LIFO_NO_ERROR; /*element got successfully*/
 }
 
 status_t LIFO__is_full(LIFO_t* lifo_ptr){
