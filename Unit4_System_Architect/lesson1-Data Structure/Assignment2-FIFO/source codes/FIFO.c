@@ -16,7 +16,7 @@ status_t FIFO_create(FIFO_t* FIFO_ptr,element_type* first_ele_ptr,uint32_t lengt
 	/*length cannot be a negative number. So, it cannot be less than zero. But if the user 
 	entered a negative length it will be converted to a positive one using 2's complement
 	causing a logical error. However it was his fault*/
-	if(length == 0)
+	if(!length)
 		return FIFO_LENGTH_ERROR;
 
 	/*safely create a FIFO*/
@@ -36,7 +36,9 @@ status_t FIFO_enqueue(FIFO_t* FIFO_ptr,element_type data){
 		return FIFO_NULL;
 	case FIFO_FULL: /*FIFO is full*/
 		return FIFO_FULL;
-	default:
+	case FIFO_LENGTH_ERROR: /*FIFO is full*/
+		return FIFO_LENGTH_ERROR;
+	case FIFO_NO_ERROR:
 		/*enqueue the element and advance the tail to point to the next empty location*/
 		*(FIFO_ptr->tail++) = data; 
 		FIFO_ptr->counter++; /*increase number of elements inside the queue*/
@@ -45,6 +47,8 @@ status_t FIFO_enqueue(FIFO_t* FIFO_ptr,element_type data){
 		if(FIFO_ptr->tail == FIFO_ptr->base + FIFO_ptr->length)
 			FIFO_ptr->tail = FIFO_ptr->base; /*circular FIFO*/
 		break;
+	default : /*not handled error*/
+		return FIFO__is_full(FIFO_ptr);
 	}
 	return FIFO_NO_ERROR; /*element enqueued successfully*/
 }
@@ -56,7 +60,9 @@ status_t FIFO_dequeue (FIFO_t* FIFO_ptr,element_type *out){
 		return FIFO_NULL;
 	case FIFO_EMPTY: /*FIFO is empty*/
 		return FIFO_EMPTY;
-	default:
+	case FIFO_LENGTH_ERROR: /*FIFO is empty*/
+		return FIFO_LENGTH_ERROR;
+	case FIFO_NO_ERROR:
 		/*dequeue the element and advance the head to point to the next location*/
 		*out = *(FIFO_ptr->head++);
 		FIFO_ptr->counter--; /*decrease number of elements inside the queue by one*/
@@ -65,14 +71,16 @@ status_t FIFO_dequeue (FIFO_t* FIFO_ptr,element_type *out){
 		if(FIFO_ptr->head == FIFO_ptr->base + FIFO_ptr->length)
 			FIFO_ptr->head = FIFO_ptr->base; /*circular FIFO*/
 		break;
+	default : /*not handled error*/
+		return FIFO__is_empty(FIFO_ptr);
 	}
 	return FIFO_NO_ERROR; /*element dequeued successfully*/
 }
 
 status_t FIFO__is_full(FIFO_t* FIFO_ptr){
 	/*check that both FIFO_ptr, and its base are valid pointers*/
-	if(FIFO_is_invalid(FIFO_ptr) == FIFO_NULL)
-		return FIFO_NULL;
+	if(FIFO_is_invalid(FIFO_ptr) != FIFO_NO_ERROR)
+		return FIFO_is_invalid(FIFO_ptr);
 	/*check if whether number of elements stored in the stack
 	reached the max available length*/
 	if(FIFO_ptr->counter == FIFO_ptr->length)
@@ -82,9 +90,9 @@ status_t FIFO__is_full(FIFO_t* FIFO_ptr){
 
 status_t FIFO__is_empty(FIFO_t* FIFO_ptr){
 	/*check that both FIFO_ptr, and its base are valid pointers*/
-	if(FIFO_is_invalid(FIFO_ptr) == FIFO_NULL)
-		return FIFO_NULL;
-	/*check if there is no lements in the FIFO*/
+	if(FIFO_is_invalid(FIFO_ptr) != FIFO_NO_ERROR)
+		return FIFO_is_invalid(FIFO_ptr);
+	/*check if there is no elements in the FIFO*/
 	if(!FIFO_ptr->counter)
 		return FIFO_EMPTY;
 	return FIFO_NO_ERROR;
@@ -94,6 +102,8 @@ status_t FIFO_is_invalid (FIFO_t* FIFO_ptr){
 	/*make sure both FIFO_ptr and its base points to a non-NUL locations*/
 	if(!FIFO_ptr || !FIFO_ptr->base)
 		return FIFO_NULL;
+	if(!FIFO_ptr->length)
+		return FIFO_LENGTH_ERROR;
 	return FIFO_NO_ERROR;
 }
 
@@ -110,8 +120,10 @@ void FIFO_print(FIFO_t* FIFO_ptr){
 	case FIFO_EMPTY:
 		printf("the FIFO is Empty\n");
 		break;
-	
-	default:
+	case FIFO_LENGTH_ERROR:
+		printf("FIFO Length cannot be zero\n");
+		break;
+	case FIFO_NO_ERROR:
 		temp = FIFO_ptr->head;
 		i = FIFO_ptr->counter;
 		while (i--)
@@ -121,6 +133,9 @@ void FIFO_print(FIFO_t* FIFO_ptr){
 			printf(format_specifier,*temp++);
 			printf("\n");
 		}
+		break;
+	default: /*unknown error*/
+		printf("Unknown Error!!");
 		break;
 	}
 	printf("============================================================\n\n");

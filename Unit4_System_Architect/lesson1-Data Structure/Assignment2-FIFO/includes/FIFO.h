@@ -14,15 +14,15 @@
 
 /*format specifier used with each data type*/
 #if   (element_type == sint32_t)
-    #define format_specifier "%d"
+    #define format_specifier "%ld"
 #elif (element_type == uint32_t)
-    #define format_specifier "%u"
+    #define format_specifier "%lu"
 #elif (element_type == sint16_t)
     #define format_specifier "%hd"
 #elif (element_type == uint16_t)
     #define format_specifier "%hu"   
 #elif (element_type == sint8_t || element_type == uint8_t)
-    #define format_specifier "%c"
+    #define format_specifier "%d" /*print decimal representation*/
 #elif (element_type == f32_t)
     #define format_specifier "%f"
 #elif (element_type == f64_t)

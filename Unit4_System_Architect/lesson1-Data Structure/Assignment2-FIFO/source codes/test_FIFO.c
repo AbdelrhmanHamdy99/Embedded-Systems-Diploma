@@ -36,7 +36,7 @@ int main(void){
 	FIFO_t test_FIFO;
 	element_type stack[MAX_LEN];
 	uint32_t i;/*iterator*/
-	element_type element; /*to carry dequeueed elements*/
+	element_type element; /*to carry dequeued elements*/
 
 	/*test using NULL pointers*/
 	test_FIFO_fun(FIFO_create,NULL,stack,MAX_LEN);
@@ -54,7 +54,7 @@ int main(void){
 	/*try to dequeue from an empty FIFO*/
 	test_FIFO_fun(FIFO_dequeue,&test_FIFO,&element);
 
-	/*test enqueu*/
+	/*test enqueue*/
 	for (i=0; i < MAX_LEN + 3;)
 	{
 		test_FIFO_fun(FIFO_enqueue,&test_FIFO,++i);
@@ -65,12 +65,12 @@ int main(void){
     
 	/*try to dequeue from a FIFO*/
 	test_FIFO_fun(FIFO_dequeue,&test_FIFO,&element);
-	printf("dequeueed element = ");
+	printf("Dequeued element = ");
 	printf(format_specifier,element);
 	printf("\n");
 
 	test_FIFO_fun(FIFO_dequeue,&test_FIFO,&element);
-	printf("dequeueed element = ");
+	printf("Dequeued element = ");
 	printf(format_specifier,element);
 	printf("\n");
 	
@@ -88,7 +88,7 @@ int main(void){
 	for ( i = 0; i < MAX_LEN; i++)
 	{
 		test_FIFO_fun(FIFO_dequeue,&test_FIFO,&element);
-		printf("dequeueed element = ");
+		printf("Dequeued element = ");
 		printf(format_specifier,element);
 		printf("\n");
 	}
@@ -96,6 +96,5 @@ int main(void){
 	/*print FIFO contents after dequeuing all elements*/
 	FIFO_print(&test_FIFO);
 
-    system("pause");
 	return 0;
 }
