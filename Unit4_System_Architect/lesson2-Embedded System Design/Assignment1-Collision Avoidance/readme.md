@@ -9,17 +9,27 @@
 2. Method
 - We are going use **V Model**
 3. Requirements Diagram
-- ![alt text](figures/CA_Requiements.png)
+
+![alt text](figures/CA_Requiements.png)
+
 4. System Analysis
     - Use Case Diagram
-    - ![alt text](figures/CA_Use_Case.png)
+    
+    ![alt text](figures/CA_Use_Case.png)
+    
     - Activity Diagram
-    - ![alt text](figures/CA_Activity.png)
+    
+    ![alt text](figures/CA_Activity.png)
+    
     - Sequence Diagram
-    - ![alt text](figures/CA_Sequence.png)
+    
+    ![alt text](figures/CA_Sequence.png)
+
 5. System Design
     - Block Diagram
-    - ![alt text](figures/CA_Block.png)
+    
+    ![alt text](figures/CA_Block.png)
+    
     - State Diagram
         - UltraSonic_interface Block
         - ![alt text](figures/CA_US.png)
