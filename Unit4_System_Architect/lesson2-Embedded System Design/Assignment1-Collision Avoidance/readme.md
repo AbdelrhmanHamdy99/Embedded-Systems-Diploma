@@ -7,7 +7,7 @@
     - Ultrasonic sensor never fails.
     - DC motor never fails
 ### 2. Method
-- We are going use **V Model**
+- We are going to use **V Model**
 ### 3. Requirements Diagram
 ![alt text](figures/CA_Requiements.png)
 ### 4. System Analysis
