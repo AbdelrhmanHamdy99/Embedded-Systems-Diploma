@@ -1,9 +1,9 @@
 # Unit04/Lesson02/Assignment01-collision Avoidance Project
 ## Design Sequence
 ### 1. Case Study
-- Specifications from the client:
+- **Specifications from the client:**
     - Collision avoidance system that stops a **DC Motor** when it is just 50cm or less from the nearest obstacle.
-- Assumptions
+- **Assumptions:**
     - Ultrasonic sensor never fails.
     - DC motor never fails
 ### 2. Method
