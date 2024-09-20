@@ -95,6 +95,6 @@ int main(void){
 	
 	/*print FIFO contents after dequeuing all elements*/
 	FIFO_print(&test_FIFO);
-
+	system("pause");
 	return 0;
 }
