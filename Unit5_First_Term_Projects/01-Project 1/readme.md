@@ -23,4 +23,4 @@
 - Generate SW analysis .map file & symbols table & Section taples and add them to the report
 
 ## Report and Output
-- [text](https://drive.google.com/drive/folders/1Nd68H9pShGTMVdN1KpFzVTUB9BiUu02w)
+- https://drive.google.com/drive/folders/1Nd68H9pShGTMVdN1KpFzVTUB9BiUu02w
