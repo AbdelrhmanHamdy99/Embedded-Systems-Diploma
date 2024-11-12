@@ -1,0 +1,14 @@
+3  Bolis   Karam 3.5  1  2  3  4  5
+-7 Marko   Mina  4.9
+j  Kerolos Gamal -3   11 12 13 14 
+Mina       Magdy 4.2  11 12 13 14 15
+8  Mayar   Ahmed A+  
+9  Mai     Abdo  -0.5 10 11 12 13 
+10 Ahmed   Sayed 4.1  1  2  3  5  6  7  8
+11 Sara    Nagy  2.0  1  4  5  
+12 Salma   Omar  3.5  11 12 20 21 22 23 24 10
+13 Omar    Amr   1.5  1  2  11 12 22 23 24 21 10 15 16 17
+14 Ali     Amr   2.6  C 20 30
+15 Hnady   Mhna  3.0  1  2  -3  4  5  6  7  8  CSE256
+16 Ahmed   Ali   3.9  1  2  CSE214s  4  5
+17 Sami    Sami  3.4  1  2  3  4  2  3  1

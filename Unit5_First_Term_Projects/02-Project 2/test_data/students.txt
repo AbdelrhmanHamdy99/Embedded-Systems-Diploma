@@ -1,0 +1,10 @@
+2  Adel    Ali   2.6 12 13 14 15
+4  sayed   Hamdy 3.48 1 11 12 21 22 31
+5  Salma   Amr   1.4  2  4  6  8  9
+6  Omar    Adham 2.0  3  7  11 24 30 31  
+
+The roll number is "9"
+The First name is "Sara"
+The Last name is "Nagy"
+The GPA is "1.60"
+courses IDs list= [1, 2, 3, 4]
