@@ -22,18 +22,18 @@ int main(void)
 	/*Clock Init*/
 	RCC_CR |= 1<<0; /*HSION
 	                  Internal High-Speed Clock enable
-					  default value*/
+		          default value*/
 
 	RCC_CFGR &= ~(0b11); /*SYSCLK = HSI = 8MHZ
-	                       Default value*/
+                               Default value*/
 
 	RCC_CFGR &= ~(1 << 7); /*AHB Prescaler = 1
 	                         HCLK = SYSCLK = 8MHZ
-							 Default value*/
+			         Default value*/
 	
 	RCC_CFGR &= ~(0b111 << 8);
 	RCC_CFGR |= 0b100 << 8; /*APB1 Prescaler = 2
-	                          PCLK2 = HCLK / 2 = 4 MHZ*/
+                                  PCLK2 = HCLK / 2 = 4 MHZ*/
 	
 	RCC_CFGR &= ~(0b111 << 11);
 	RCC_CFGR |= 0b101 << 11; /*APB2 Prescaler = 4
