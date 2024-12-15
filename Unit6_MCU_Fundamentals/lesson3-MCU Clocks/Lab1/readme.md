@@ -9,5 +9,4 @@ This lab demonstrates the critical role of clock management in electronic circui
 - Illustrate how the absence of clock enabling can impact the functionality of an MCU peripheral.  
 
 ### **Output**  
-Access the lab results and project files through the following link:  
-[Lab Files and Outputs](https://drive.google.com/drive/folders/1ZoPJiDd89AbkUsXrHQq2lsgnxS6cB1QC)
+![alt text](Out.png)
