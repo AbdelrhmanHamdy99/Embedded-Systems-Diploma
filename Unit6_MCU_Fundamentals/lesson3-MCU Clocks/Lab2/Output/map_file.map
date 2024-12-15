@@ -1,0 +1,119 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x0000000008000000 0x0000000000020000 xr
+sram             0x0000000020000000 0x0000000000005000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000008000000      0x1b4
+ *(.vector*)
+ .vector_table  0x0000000008000000       0x40 ./Object_Files/startup.o
+                0x0000000008000000                vector_table
+ *(.text)
+ .text          0x0000000008000040       0xe8 ./Object_Files/main.o
+                0x0000000008000040                main
+ .text          0x0000000008000128       0x8c ./Object_Files/startup.o
+                0x0000000008000128                Reset_Handler
+                0x00000000080001a8                SysTick_Handler
+                0x00000000080001a8                PendSV_Handler
+                0x00000000080001a8                NMI_Handler
+                0x00000000080001a8                UsageFault_Handler
+                0x00000000080001a8                HardFault_Handler
+                0x00000000080001a8                SVCall_Handler
+                0x00000000080001a8                Default_Handler
+                0x00000000080001a8                MemManage_Handler
+                0x00000000080001a8                BusFault_Handler
+ *(.rodata)
+                0x00000000080001b4                . = ALIGN (0x4)
+                0x00000000080001b4                _E_text = .
+
+.glue_7         0x00000000080001b4        0x0
+ .glue_7        0x00000000080001b4        0x0 linker stubs
+
+.glue_7t        0x00000000080001b4        0x0
+ .glue_7t       0x00000000080001b4        0x0 linker stubs
+
+.vfp11_veneer   0x00000000080001b4        0x0
+ .vfp11_veneer  0x00000000080001b4        0x0 linker stubs
+
+.v4_bx          0x00000000080001b4        0x0
+ .v4_bx         0x00000000080001b4        0x0 linker stubs
+
+.iplt           0x00000000080001b4        0x0
+ .iplt          0x00000000080001b4        0x0 ./Object_Files/main.o
+
+.rel.dyn        0x00000000080001b4        0x0
+ .rel.iplt      0x00000000080001b4        0x0 ./Object_Files/main.o
+
+.data           0x0000000020000000        0x0 load address 0x00000000080001b4
+                0x0000000020000000                _S_data = .
+ *(.data)
+ .data          0x0000000020000000        0x0 ./Object_Files/main.o
+ .data          0x0000000020000000        0x0 ./Object_Files/startup.o
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _E_data = .
+
+.igot.plt       0x0000000020000000        0x0 load address 0x00000000080001b4
+ .igot.plt      0x0000000020000000        0x0 ./Object_Files/main.o
+
+.bss            0x0000000020000000        0x0 load address 0x00000000080001b4
+                0x0000000020000000                _S_bss = .
+ *(.bss)
+ .bss           0x0000000020000000        0x0 ./Object_Files/main.o
+ .bss           0x0000000020000000        0x0 ./Object_Files/startup.o
+ *(COMMON)
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _E_bss = .
+                0x0000000020001000                . = (. + 0x1000)
+                0x0000000020001000                _stack_top = .
+LOAD ./Object_Files/main.o
+LOAD ./Object_Files/startup.o
+OUTPUT(Output/unit06_lesson03_lab02.elf elf32-littlearm)
+
+.debug_info     0x0000000000000000      0xb51
+ .debug_info    0x0000000000000000      0x9dd ./Object_Files/main.o
+ .debug_info    0x00000000000009dd      0x174 ./Object_Files/startup.o
+
+.debug_abbrev   0x0000000000000000      0x26e
+ .debug_abbrev  0x0000000000000000      0x1b5 ./Object_Files/main.o
+ .debug_abbrev  0x00000000000001b5       0xb9 ./Object_Files/startup.o
+
+.debug_loc      0x0000000000000000       0x9c
+ .debug_loc     0x0000000000000000       0x38 ./Object_Files/main.o
+ .debug_loc     0x0000000000000038       0x64 ./Object_Files/startup.o
+
+.debug_aranges  0x0000000000000000       0x40
+ .debug_aranges
+                0x0000000000000000       0x20 ./Object_Files/main.o
+ .debug_aranges
+                0x0000000000000020       0x20 ./Object_Files/startup.o
+
+.debug_line     0x0000000000000000      0x356
+ .debug_line    0x0000000000000000      0x2c5 ./Object_Files/main.o
+ .debug_line    0x00000000000002c5       0x91 ./Object_Files/startup.o
+
+.debug_str      0x0000000000000000      0x588
+ .debug_str     0x0000000000000000      0x4f6 ./Object_Files/main.o
+                                        0x554 (size before relaxing)
+ .debug_str     0x00000000000004f6       0x92 ./Object_Files/startup.o
+                                        0x1ec (size before relaxing)
+
+.comment        0x0000000000000000       0x7b
+ .comment       0x0000000000000000       0x7b ./Object_Files/main.o
+                                         0x7c (size before relaxing)
+ .comment       0x000000000000007b       0x7c ./Object_Files/startup.o
+
+.ARM.attributes
+                0x0000000000000000       0x33
+ .ARM.attributes
+                0x0000000000000000       0x33 ./Object_Files/main.o
+ .ARM.attributes
+                0x0000000000000033       0x33 ./Object_Files/startup.o
+
+.debug_frame    0x0000000000000000       0x78
+ .debug_frame   0x0000000000000000       0x2c ./Object_Files/main.o
+ .debug_frame   0x000000000000002c       0x4c ./Object_Files/startup.o
