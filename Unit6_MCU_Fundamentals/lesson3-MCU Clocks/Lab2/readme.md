@@ -8,4 +8,4 @@ Configure Board to run with the Following rates:
 - Use only internal HSI_RC
 
 ## **Output**  
-![alt text](out.png)
+![alt text](Figures/out.png)
