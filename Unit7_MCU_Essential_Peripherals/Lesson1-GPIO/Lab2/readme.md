@@ -50,7 +50,7 @@ This project aims to demonstrate practical control of GPIO pins by implementing 
 ---  
 
 ### **Simulation Video**  
-[Simulation Video Link]()  
+[Simulation Video Link](https://drive.google.com/drive/folders/1Ob_EBbkb6oocDZSdcv1RdgQInMiJyQYs)  
 This video demonstrates the sequential lighting and dimming of LEDs on the ATmega32, as implemented in this lab.  
 
 ---  
