@@ -1,0 +1,3 @@
+7Seg.c:15:6:SevenSeg_Init	24	static
+7Seg.c:36:6:SevenSeg_DisplayNumber	24	static
+7Seg.c:111:6:SevenSeg_Clear	16	static
