@@ -122,7 +122,7 @@ typedef struct {
 #define AFIO   ((AFIO_T*)(AFIO_BASE))
 
 /**********************EXTI Instants***********************/
-#define EXTI   ((AFIO_T*)(EXTI_BASE))
+#define EXTI   ((EXTI_T*)(EXTI_BASE))
 
 /*****************APB1 BUS Peripherals Instants*************/
 
