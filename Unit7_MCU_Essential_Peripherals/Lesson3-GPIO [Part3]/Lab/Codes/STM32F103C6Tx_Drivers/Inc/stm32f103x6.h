@@ -19,11 +19,11 @@
 			Base addresses for Memories
 ****************************************************************/
 #define FLASH_MEMORY_BASE   					0x08000000
-#define SYSTEM MEMORY_BASE	  					0x1FFFF000
+#define SYSTEM MEMORY_BASE	  				0x1FFFF000
 #define OPTION BYTES_BASE   					0x1FFFF800
 #define SRAM_BASE   	    					0x20000000
-#define PERIPHERALS_BASE   						0x40000000
-#define Cortex_M3_Internal_Peripherals_BASE   	0xE0000000
+#define PERIPHERALS_BASE   					0x40000000
+#define Cortex_M3_Internal_Peripherals_BASE   			0xE0000000
 
 /*================================================================================================================*/
 
@@ -39,9 +39,9 @@
 #define GPIOB_BASE   	    				   	0x40010C00		/*GPIO Port B Base Address*/
 #define GPIOA_BASE   	    				   	0x40010800		/*GPIO Port A Base Address*/
 
-#define EXTI_BASE   	    				   	0x40010800		/*External Interrupt Base Address*/
+#define EXTI_BASE   	    				   	0x40010400		/*External Interrupt Base Address*/
 
-#define AFIO_BASE   	    				   	0x40010800		/*Alternate Function Input/Output Base Address*/
+#define AFIO_BASE   	    				   	0x40010000		/*Alternate Function Input/Output Base Address*/
 /**********************APB1 BUS Peripherals*********************/
 
 /*================================================================================================================*/
