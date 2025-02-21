@@ -28,6 +28,7 @@ The project follows a structured **MCAL & HAL layered architecture**:
 📂 Codes
 │── 📂 STM32F103C6Tx_Drivers 
 │   │── 📂 inc
+│   │   │── stm32f103x6.h  # MCU Driver Header
 │   │   │── stm32f103c6_GPIO_Driver.h  # GPIO Driver Header
 │   │── 📂 GPIO
 │   │   │── stm32f103c6_GPIO_Driver.c  # GPIO Driver Implementation
@@ -44,6 +45,7 @@ The project follows a structured **MCAL & HAL layered architecture**:
 │   │   │── 7Seg.c  # Seven Segment Implementation
 │── 📂 Src
 │   │── main.c  # Main Application Logic
+│   │── syscalls.c, sysmem.c           # System Files
 ```
 
 ---

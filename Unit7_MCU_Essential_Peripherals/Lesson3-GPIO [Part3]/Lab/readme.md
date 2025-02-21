@@ -35,13 +35,12 @@ This lesson focuses on developing a **GPIO driver from scratch** for the STM32F1
 │── 📂 STM32F103C6Tx_Drivers
 │   │── 📂 GPIO
 │   │   │── stm32f103c6_GPIO_Driver.c  # GPIO Driver Implementation
-│   │   │── stm32f103c6_GPIO_Driver.h  # GPIO Driver Header
 │   │── 📂 Inc
-│   │   │── stm32f103x6.h              # STM32F103 Register Definitions
+│   │   │── stm32f103c6_GPIO_Driver.h  # GPIO Driver Header
+│   │   │── stm32f103x6.h              # STM32F103 MCU Driver Definitions
 │── 📂 Src
 │   │── main.c                         # Application Code (Button-LED Control)
 │   │── syscalls.c, sysmem.c           # System Files
-│── README.md                          # Project Documentation
 ```
 
 ---
