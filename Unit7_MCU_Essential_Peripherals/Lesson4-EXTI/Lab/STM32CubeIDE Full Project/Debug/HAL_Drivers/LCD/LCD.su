@@ -1,8 +1,0 @@
-LCD.c:31:6:LCD_Init	24	static
-LCD.c:164:6:LCD_Write_Data	16	static
-LCD.c:176:6:LCD_Write_Command	32	static
-LCD.c:233:6:LCD_SendCharacter	32	static
-LCD.c:287:9:LCD_Busy	16	static
-LCD.c:328:13:_delay_ms	24	static
-LCD.c:340:13:_delay_us	24	static
-LCD.c:352:13:_delay_ns	16	static
