@@ -1,4 +1,4 @@
-# Unit 07 - Lesson 04 - STM32F103C6 External Interrupt (EXTI) Driver
+# Unit 07 - Lesson 04 - Lab - STM32F103C6 External Interrupt (EXTI) Driver
 
 ## **📌 Project Overview**
 This project focuses on implementing an **External Interrupt (EXTI) Driver** for the **STM32F103C6** microcontroller. The driver is tested using a **simple application**, where a button press triggers an interrupt, and the status is displayed on an **LCD**.
